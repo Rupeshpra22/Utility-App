@@ -112,4 +112,5 @@ header h1{
     display: flex;
     align-items: center;
     word-break: break-all;
+    padding: 15px;
 }

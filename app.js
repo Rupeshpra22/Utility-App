@@ -69,7 +69,8 @@ const constructSelectedApp = (appId) => {
     const inputEle = document.createElement("input");
     inputEle.type = "text";
     inputEle.placeholder = "Enter some value";
-    inputEle.classList.add("input-text")
+    inputEle.classList.add("input-text");
+    inputEle.id = "input-"+filteredApp[0].id;
     parentEle.appendChild(appName);
     parentEle.appendChild(message);
     parentEle.appendChild(inputEle);
@@ -92,8 +93,9 @@ const constructSelectedApp = (appId) => {
     outputParent.appendChild(output);
     parentEle.appendChild(outputParent)
     main.appendChild(parentEle);
-    
+
 }
+
 const encoderDecoder = document.querySelector("#encode-decode-url");
 const base64Decode = document.querySelector("#base64-decode");
 const base64Encode = document.querySelector("#base64-encode");
@@ -132,3 +134,60 @@ sha512.addEventListener("click", (event) => {
     constructSelectedApp(appId);
 })
 
+document.querySelector(".main").addEventListener("DOMSubtreeModified", () => {
+    const btnEncode = document.querySelector("#btn-encode-url");
+    const btnDecode = document.querySelector("#btn-decode-url");
+    const btnBase64Decode = document.querySelector("#btn-base64-decode");
+    const btnBase64Encode = document.querySelector("#btn-base64-encode");
+    const btnMd5 = document.querySelector("#btn-md5");
+    const btnSha1 = document.querySelector("#btn-sha1");
+    const btnSha256 = document.querySelector("#btn-sha256");
+    const btnSha512 = document.querySelector("#btn-sha512");
+    
+    if (btnEncode != null) {
+        btnEncode.addEventListener("click", () => {
+            document.querySelector(".output").innerText = encodeURIComponent(document.querySelector("#input-encode-decode-url").value);
+        })
+    }
+    if(btnDecode!=null){
+        btnDecode.addEventListener("click", () => {
+            document.querySelector(".output").innerText = decodeURIComponent(document.querySelector("#input-encode-decode-url").value)
+        })
+    }
+
+    if(btnBase64Decode!=null){
+        btnBase64Decode.addEventListener("click", () => {
+            document.querySelector(".output").innerText = atob(document.querySelector("#input-base64-decode").value).toString('base64')
+        })
+    }
+
+    if(btnBase64Encode!=null){
+        btnBase64Encode.addEventListener("click", () => {
+            document.querySelector(".output").innerText = btoa(document.querySelector("#input-base64-encode").value).toString('base64')
+        })
+    }
+
+    if(btnMd5!=null){
+        btnMd5.addEventListener("click", () => {
+            document.querySelector(".output").innerText = CryptoJS.MD5(document.querySelector("#input-md5").value)
+        })
+    }
+
+    if(btnSha1!=null){
+        btnSha1.addEventListener("click", () => {
+            document.querySelector(".output").innerText = CryptoJS.SHA1(document.querySelector("#input-sha1").value)
+        })
+    }
+
+    if(btnSha256!=null){
+        btnSha256.addEventListener("click", () => {
+            document.querySelector(".output").innerText = CryptoJS.SHA256(document.querySelector("#input-sha256").value)
+        })
+    }
+
+    if(btnSha512!=null){
+        btnSha512.addEventListener("click", () => {
+            document.querySelector(".output").innerText = CryptoJS.SHA512(document.querySelector("#input-sha512").value)
+        })
+    }
+})
