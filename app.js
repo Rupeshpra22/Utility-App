@@ -8,15 +8,15 @@ const encoderDecoders = [
         id: "encode-decode-url"
     },
     {
-        name: "Base64 Decode",
-        operation: [{ id: "btn-base64-decode", name: "Base64 Decode" }],
-        id: "base64-decode"
-    },
-    {
         name: "Base64 Encode",
         operation: [{ id: "btn-base64-encode", name: "Base64 Encode" }],
         id: "base64-encode"
     },
+    {
+        name: "Base64 Decode",
+        operation: [{ id: "btn-base64-decode", name: "Base64 Decode" }],
+        id: "base64-decode"
+    },    
     {
         name: "MD5 Hash Generator",
         operation: [{ id: "btn-md5", name: "Generate" }],
@@ -143,7 +143,7 @@ document.querySelector(".main").addEventListener("DOMSubtreeModified", () => {
     const btnSha1 = document.querySelector("#btn-sha1");
     const btnSha256 = document.querySelector("#btn-sha256");
     const btnSha512 = document.querySelector("#btn-sha512");
-    
+
     if (btnEncode != null) {
         btnEncode.addEventListener("click", () => {
             document.querySelector(".output").innerText = encodeURIComponent(document.querySelector("#input-encode-decode-url").value);
