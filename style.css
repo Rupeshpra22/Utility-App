@@ -1,0 +1,115 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.default-padding{
+    padding: 5px;
+}
+
+header h1{
+    text-align: center;
+    height: 80px;
+    color: #167D7F;
+    text-shadow: 2px 2px 4px #167D7F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section{
+    padding: 50px;
+    box-shadow:rgb(0 0 0 / 35%) 0px 5px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+    margin: 0px 50px;
+}
+
+.container{
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center; 
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    background-color: #98D7C2;
+}
+
+.main{
+    margin: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    background-color: #DDFFE7;
+}
+
+.default-message{
+    text-align:center;
+    word-spacing: 2px;
+}
+
+.parent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 35px;
+}
+
+.input-text{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow:  1px 0px 4px 4px #98d7c2
+}
+
+.button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.operation{
+    padding: 9px;
+    outline: 0;
+    border: 0px;
+    font-weight: bold;
+    background-color: #167D7F;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.output-container{
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.output{
+    min-width: 200px;
+    min-height: 35px;
+    border-radius: 2px;
+    margin-top: 5px;
+    background-color: white;
+    box-shadow:  1px 0px 4px 4px #98d7c2;
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+}
