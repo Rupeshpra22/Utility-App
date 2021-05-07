@@ -45,7 +45,7 @@ for (let encoderDecoder of encoderDecoders) {
     container.classList.add("container");
     container.id = `${encoderDecoder.id}`
     container.innerText = `${encoderDecoder.name}`
-    container.onclick = () => selectedApp(container.id)
+    container.onclick = () => constructSelectedApp(container.id)
     section.appendChild(container)
 }
 
@@ -82,7 +82,7 @@ const constructSelectedApp = (appId) => {
         btn.type = "button";
         btn.value = operation.name;
         btn.id = operation.id;
-        btn.onclick= () => operationFunc(inputEle.value, btn.id)
+        btn.onclick = () => operationFunc(inputEle.value, btn.id)
         btn.classList.add("operation")
         button.appendChild(btn);
         parentEle.appendChild(button);
@@ -97,19 +97,19 @@ const constructSelectedApp = (appId) => {
     main.appendChild(parentEle);
 }
 
-const selectedApp = (id) => {
-    constructSelectedApp(id);
-}
-
 const operationFunc = (value, id) => {
     switch (id) {
-        case "btn-encode-url": document.querySelector(".output").innerText = encodeURIComponent(value); break;
-        case "btn-decode-url": document.querySelector(".output").innerText = decodeURIComponent(value); break;
-        case "btn-base64-encode": document.querySelector(".output").innerText = atob(value); break;
-        case "btn-base64-decode": document.querySelector(".output").innerText = btoa(value); break;
-        case "btn-md5": document.querySelector(".output").innerText = CryptoJS.MD5(value); break;
-        case "btn-sha1": document.querySelector(".output").innerText = CryptoJS.SHA1(value); break;
-        case "btn-sha256": document.querySelector(".output").innerText = CryptoJS.SHA256(value); break;
-        case "btn-sha512": document.querySelector(".output").innerText = CryptoJS.SHA512(value); break;
+        case "btn-encode-url": document.querySelector(".output").innerText = encodeURIComponent(value); clearInput(); break;
+        case "btn-decode-url": document.querySelector(".output").innerText = decodeURIComponent(value); clearInput(); break;
+        case "btn-base64-encode": document.querySelector(".output").innerText = atob(value); clearInput(); break;
+        case "btn-base64-decode": document.querySelector(".output").innerText = btoa(value); clearInput(); break;
+        case "btn-md5": document.querySelector(".output").innerText = CryptoJS.MD5(value); clearInput(); break;
+        case "btn-sha1": document.querySelector(".output").innerText = CryptoJS.SHA1(value); clearInput(); break;
+        case "btn-sha256": document.querySelector(".output").innerText = CryptoJS.SHA256(value); clearInput(); break;
+        case "btn-sha512": document.querySelector(".output").innerText = CryptoJS.SHA512(value); clearInput(); break;
     }
+}
+
+const clearInput = () => {
+    document.querySelector(".input-text").value = ""
 }
