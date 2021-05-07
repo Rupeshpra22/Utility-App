@@ -16,7 +16,7 @@ const encoderDecoders = [
         name: "Base64 Decode",
         operation: [{ id: "btn-base64-decode", name: "Base64 Decode" }],
         id: "base64-decode"
-    },    
+    },
     {
         name: "MD5 Hash Generator",
         operation: [{ id: "btn-md5", name: "Generate" }],
@@ -45,6 +45,7 @@ for (let encoderDecoder of encoderDecoders) {
     container.classList.add("container");
     container.id = `${encoderDecoder.id}`
     container.innerText = `${encoderDecoder.name}`
+    container.onclick = () => selectedApp(container.id)
     section.appendChild(container)
 }
 
@@ -70,7 +71,7 @@ const constructSelectedApp = (appId) => {
     inputEle.type = "text";
     inputEle.placeholder = "Enter some value";
     inputEle.classList.add("input-text");
-    inputEle.id = "input-"+filteredApp[0].id;
+    inputEle.id = "input-" + filteredApp[0].id;
     parentEle.appendChild(appName);
     parentEle.appendChild(message);
     parentEle.appendChild(inputEle);
@@ -80,7 +81,8 @@ const constructSelectedApp = (appId) => {
         const btn = document.createElement("input");
         btn.type = "button";
         btn.value = operation.name;
-        btn.id = operation.id
+        btn.id = operation.id;
+        btn.onclick= () => operationFunc(inputEle.value, btn.id)
         btn.classList.add("operation")
         button.appendChild(btn);
         parentEle.appendChild(button);
@@ -93,101 +95,21 @@ const constructSelectedApp = (appId) => {
     outputParent.appendChild(output);
     parentEle.appendChild(outputParent)
     main.appendChild(parentEle);
-
 }
 
-const encoderDecoder = document.querySelector("#encode-decode-url");
-const base64Decode = document.querySelector("#base64-decode");
-const base64Encode = document.querySelector("#base64-encode");
-const md5 = document.querySelector("#md5");
-const sha1 = document.querySelector("#sha1");
-const sha256 = document.querySelector("#sha256");
-const sha512 = document.querySelector("#sha512");
+const selectedApp = (id) => {
+    constructSelectedApp(id);
+}
 
-encoderDecoder.addEventListener('click', (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-
-base64Decode.addEventListener("click", (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-base64Encode.addEventListener("click", (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-md5.addEventListener("click", (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-sha1.addEventListener("click", (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-sha256.addEventListener("click", (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-sha512.addEventListener("click", (event) => {
-    const appId = event.target.id;
-    constructSelectedApp(appId);
-})
-
-document.querySelector(".main").addEventListener("DOMSubtreeModified", () => {
-    const btnEncode = document.querySelector("#btn-encode-url");
-    const btnDecode = document.querySelector("#btn-decode-url");
-    const btnBase64Decode = document.querySelector("#btn-base64-decode");
-    const btnBase64Encode = document.querySelector("#btn-base64-encode");
-    const btnMd5 = document.querySelector("#btn-md5");
-    const btnSha1 = document.querySelector("#btn-sha1");
-    const btnSha256 = document.querySelector("#btn-sha256");
-    const btnSha512 = document.querySelector("#btn-sha512");
-
-    if (btnEncode != null) {
-        btnEncode.addEventListener("click", () => {
-            document.querySelector(".output").innerText = encodeURIComponent(document.querySelector("#input-encode-decode-url").value);
-        })
+const operationFunc = (value, id) => {
+    switch (id) {
+        case "btn-encode-url": document.querySelector(".output").innerText = encodeURIComponent(value); break;
+        case "btn-decode-url": document.querySelector(".output").innerText = decodeURIComponent(value); break;
+        case "btn-base64-encode": document.querySelector(".output").innerText = atob(value); break;
+        case "btn-base64-decode": document.querySelector(".output").innerText = btoa(value); break;
+        case "btn-md5": document.querySelector(".output").innerText = CryptoJS.MD5(value); break;
+        case "btn-sha1": document.querySelector(".output").innerText = CryptoJS.SHA1(value); break;
+        case "btn-sha256": document.querySelector(".output").innerText = CryptoJS.SHA256(value); break;
+        case "btn-sha512": document.querySelector(".output").innerText = CryptoJS.SHA512(value); break;
     }
-    if(btnDecode!=null){
-        btnDecode.addEventListener("click", () => {
-            document.querySelector(".output").innerText = decodeURIComponent(document.querySelector("#input-encode-decode-url").value)
-        })
-    }
-
-    if(btnBase64Decode!=null){
-        btnBase64Decode.addEventListener("click", () => {
-            document.querySelector(".output").innerText = atob(document.querySelector("#input-base64-decode").value).toString('base64')
-        })
-    }
-
-    if(btnBase64Encode!=null){
-        btnBase64Encode.addEventListener("click", () => {
-            document.querySelector(".output").innerText = btoa(document.querySelector("#input-base64-encode").value).toString('base64')
-        })
-    }
-
-    if(btnMd5!=null){
-        btnMd5.addEventListener("click", () => {
-            document.querySelector(".output").innerText = CryptoJS.MD5(document.querySelector("#input-md5").value)
-        })
-    }
-
-    if(btnSha1!=null){
-        btnSha1.addEventListener("click", () => {
-            document.querySelector(".output").innerText = CryptoJS.SHA1(document.querySelector("#input-sha1").value)
-        })
-    }
-
-    if(btnSha256!=null){
-        btnSha256.addEventListener("click", () => {
-            document.querySelector(".output").innerText = CryptoJS.SHA256(document.querySelector("#input-sha256").value)
-        })
-    }
-
-    if(btnSha512!=null){
-        btnSha512.addEventListener("click", () => {
-            document.querySelector(".output").innerText = CryptoJS.SHA512(document.querySelector("#input-sha512").value)
-        })
-    }
-})
+}
