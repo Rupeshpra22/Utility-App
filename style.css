@@ -42,7 +42,7 @@ a{
 }
 
 a:hover{
-    background-color: #ffcece;
+    background-color: indianred;
     border-radius: 5px;
 }
 .title h1{
@@ -78,6 +78,9 @@ a:hover{
     cursor: pointer;
     margin: 10px;
     background-color: #98D7C2;
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .main{
