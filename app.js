@@ -39,6 +39,26 @@ const encoderDecoders = [
     }
 ]
 
+const navId = [
+    { name: "encoder-decoder" },
+    { name: "rgb-hex" },
+    { name: "timestamp" },
+    { name: "unit" },
+    { name: "number-base" },
+    { name: "text-tool-string" }
+]
+// Array.from(navEle.children[0].classList).includes("active")
+//window.location.pathname.split("/")[1].includes("timestamp")
+
+window.onload = () => {
+    navId.forEach(id=>{
+        if(window.location.pathname.split("/")[1].includes(id.name)){
+            document.getElementById(id.name).classList.add("active");
+            return;
+        }
+    })    
+}
+
 const section = document.querySelector(".section");
 for (let encoderDecoder of encoderDecoders) {
     const container = document.createElement("div");

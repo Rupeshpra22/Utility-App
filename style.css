@@ -8,7 +8,40 @@
     padding: 5px;
 }
 
+.active{
+    background-color: indianred;
+    border-radius: 5px;
+}
+
 header h1{
+    text-align: center;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 4px  black;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    height: 60px;
+    text-shadow: 2px 2px 4px  black;
+    height: fit-content;
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+
+}
+
+.title h1{
     text-align: center;
     height: 80px;
     color: #167D7F;
