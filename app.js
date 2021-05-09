@@ -406,8 +406,8 @@ main.appendChild(defaultMessage);
 const constructSelectedApp = (appId, operations) => {
     defaultMessage.style.display = "none";
     main.innerHTML = ``;
-    main.id=appId;
     const parentEle = document.createElement("div");
+    parentEle.id = appId;
     parentEle.classList.add("parent")
     const appName = document.createElement("h3");
     appName.classList.add("default-padding");
@@ -448,6 +448,7 @@ const constructSelectedApp = (appId, operations) => {
     parentEle.appendChild(outputParent)
     main.appendChild(parentEle);
     window.location.hash = appId;
+    window.scroll(0, document.documentElement.scrollHeight);
 }
 
 const operationFunc = (value, id) => {
@@ -479,10 +480,10 @@ const operationFunc = (value, id) => {
         case "btn-octaltobinary": octalToBinary(value); break;
         case "btn-octaltodecimal": octalToDecimal(value); break;
         case "btn-octaltohex": octalToHex(value); break;
-        case "btn-lowercase" : lowercase(value); break;
-        case "btn-uppercase" : uppercase(value); break;
-        case "btn-reverse" : reverse(value); break;
-        case "btn-count" : count(value); break;
+        case "btn-lowercase": lowercase(value); break;
+        case "btn-uppercase": uppercase(value); break;
+        case "btn-reverse": reverse(value); break;
+        case "btn-count": count(value); break;
     }
 }
 
@@ -588,79 +589,79 @@ const binaryToDecimal = (value) => {
     clearInput();
 }
 
-const binaryToHex = (value) =>{
+const binaryToHex = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 2).toString(16);
     clearInput();
 }
 
-const binaryToOctal = (value) =>{
+const binaryToOctal = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 2).toString(8);
     clearInput();
 }
 
-const decimalToBinary = (value) =>{
+const decimalToBinary = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 10).toString(2);
     clearInput();
 }
 
-const decimalToHex = (value) =>{
+const decimalToHex = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 10).toString(16);
     clearInput();
 }
 
-const decimalToOctal = (value) =>{
+const decimalToOctal = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 10).toString(8);
     clearInput();
 }
 
-const hexToBinary = (value) =>{
+const hexToBinary = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 16).toString(2);
     clearInput();
 }
 
-const hexToDecimal = (value) =>{
+const hexToDecimal = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 16).toString(10);
     clearInput();
 }
 
-const hexToOctal = (value) =>{
+const hexToOctal = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 16).toString(8);
     clearInput();
 }
 
-const octalToBinary= (value) =>{
+const octalToBinary = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 8).toString(2);
     clearInput();
 }
 
-const octalToDecimal = (value) =>{
+const octalToDecimal = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 8).toString(10);
     clearInput();
 }
 
-const octalToHex = (value) =>{
+const octalToHex = (value) => {
     document.querySelector(".output").innerText = parseInt(value, 8).toString(16);
     clearInput();
 }
 
-const lowercase = (value) =>{
+const lowercase = (value) => {
     document.querySelector(".output").innerText = value.toLowerCase();
     clearInput();
 }
 
-const uppercase = (value) =>{
+const uppercase = (value) => {
     document.querySelector(".output").innerText = value.toUpperCase();
     clearInput();
 }
 
-const reverse = (value) =>{
+const reverse = (value) => {
     let spliitedValue = value.split("");
     let reversedValue = spliitedValue.reverse();
     document.querySelector(".output").innerText = reversedValue.join("");
     clearInput();
-} 
+}
 
-const count = (value) =>{
+const count = (value) => {
     document.querySelector(".output").innerText = value.length;
     clearInput();
 }
