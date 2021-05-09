@@ -446,6 +446,7 @@ const constructSelectedApp = (appId, operations) => {
     outputParent.appendChild(output);
     parentEle.appendChild(outputParent)
     main.appendChild(parentEle);
+    window.location.hash = appId
 }
 
 const operationFunc = (value, id) => {
