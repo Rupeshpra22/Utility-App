@@ -406,6 +406,7 @@ main.appendChild(defaultMessage);
 const constructSelectedApp = (appId, operations) => {
     defaultMessage.style.display = "none";
     main.innerHTML = ``;
+    main.id=appId;
     const parentEle = document.createElement("div");
     parentEle.classList.add("parent")
     const appName = document.createElement("h3");
@@ -446,7 +447,7 @@ const constructSelectedApp = (appId, operations) => {
     outputParent.appendChild(output);
     parentEle.appendChild(outputParent)
     main.appendChild(parentEle);
-    // window.location.hash = appId
+    window.location.hash = appId;
 }
 
 const operationFunc = (value, id) => {
