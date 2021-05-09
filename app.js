@@ -101,7 +101,7 @@ const utilityApp = [
             {
                 name: "HEX to RGB",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-hextorgb",
                     noOfInputs: 1,
                     placeholder: ["Enter Hex Value eg:#345434"]
@@ -127,7 +127,7 @@ const utilityApp = [
             {
                 name: "Human Date to Epoch Time",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-humantoepoch",
                     noOfInputs: 1,
                     placeholder: ["Enter Date eg: 2019,2,3"]
@@ -153,7 +153,7 @@ const utilityApp = [
             {
                 name: "Centimeter to Kilometer",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-cmtokm",
                     noOfInputs: 1,
                     placeholder: ["Enter Centimeter Value"]
@@ -163,7 +163,7 @@ const utilityApp = [
             {
                 name: "Kilometer to mile",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-kmtomile",
                     noOfInputs: 1,
                     placeholder: ["Enter Kilometer Value"]
@@ -189,7 +189,7 @@ const utilityApp = [
             {
                 name: "Binary To Hexadecimal Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-binarytohex",
                     noOfInputs: 1,
                     placeholder: ["Enter Binary Value"]
@@ -199,7 +199,7 @@ const utilityApp = [
             {
                 name: "Binary to Octal Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-binarytooctal",
                     noOfInputs: 1,
                     placeholder: ["Enter Binary Value"]
@@ -209,7 +209,7 @@ const utilityApp = [
             {
                 name: "Decimal to Binary Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-decimaltobinary",
                     noOfInputs: 1,
                     placeholder: ["Enter Decimal Value"]
@@ -219,7 +219,7 @@ const utilityApp = [
             {
                 name: "Decimal to Hex Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-decimaltohex",
                     noOfInputs: 1,
                     placeholder: ["Enter Decimal Value"]
@@ -229,7 +229,7 @@ const utilityApp = [
             {
                 name: "Decimal to Octal Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-decimaltooctal",
                     noOfInputs: 1,
                     placeholder: ["Enter Decimal Value"]
@@ -239,7 +239,7 @@ const utilityApp = [
             {
                 name: "Hex to Binary Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-hextobinary",
                     noOfInputs: 1,
                     placeholder: ["Enter Hex Value"]
@@ -249,7 +249,7 @@ const utilityApp = [
             {
                 name: "Hex to Decimal Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-hextodecimal",
                     noOfInputs: 1,
                     placeholder: ["Enter Hex Value"]
@@ -259,7 +259,7 @@ const utilityApp = [
             {
                 name: "Hex to Octal Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-hextooctal",
                     noOfInputs: 1,
                     placeholder: ["Enter Hex Value"]
@@ -269,7 +269,7 @@ const utilityApp = [
             {
                 name: "Octal to Binary Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-octaltobinary",
                     noOfInputs: 1,
                     placeholder: ["Enter Octal Value"]
@@ -279,7 +279,7 @@ const utilityApp = [
             {
                 name: "Octal to Decimal Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-octaltodecimal",
                     noOfInputs: 1,
                     placeholder: ["Enter Octal Value"]
@@ -289,7 +289,7 @@ const utilityApp = [
             {
                 name: "Octal to Hex Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-octaltohex",
                     noOfInputs: 1,
                     placeholder: ["Enter Octal Value"]
@@ -315,7 +315,7 @@ const utilityApp = [
             {
                 name: "Uppercase Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-uppercase",
                     noOfInputs: 1,
                     placeholder: ["Enter some value"]
@@ -325,7 +325,7 @@ const utilityApp = [
             {
                 name: "Reverse Converter",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-reverse",
                     noOfInputs: 1,
                     placeholder: ["Enter some value"]
@@ -335,7 +335,7 @@ const utilityApp = [
             {
                 name: "Character Count",
                 operation: [{
-                    name: "convert",
+                    name: "Convert",
                     id: "btn-count",
                     noOfInputs: 1,
                     placeholder: ["Enter some value"]
