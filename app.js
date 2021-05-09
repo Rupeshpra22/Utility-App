@@ -407,7 +407,6 @@ const constructSelectedApp = (appId, operations) => {
     defaultMessage.style.display = "none";
     main.innerHTML = ``;
     const parentEle = document.createElement("div");
-    parentEle.id = appId;
     parentEle.classList.add("parent")
     const appName = document.createElement("h3");
     appName.classList.add("default-padding");
