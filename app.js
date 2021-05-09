@@ -410,6 +410,7 @@ const constructSelectedApp = (appId, operations) => {
     parentEle.classList.add("parent")
     const appName = document.createElement("h3");
     appName.classList.add("default-padding");
+    appName.style.textAlign = "center";
     const filteredApp = operations.filter(app => app.id === appId);
     appName.innerText = filteredApp[0].name;
     const message = document.createElement("div");
