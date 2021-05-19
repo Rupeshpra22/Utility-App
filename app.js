@@ -669,3 +669,7 @@ const count = (value) => {
 const clearInput = () => {
     document.querySelectorAll(".input-text").forEach(input => input.value = "")
 }
+
+document.querySelector("#gotop").addEventListener('click', ()=>{
+    window.scrollTo(0,0);
+})
