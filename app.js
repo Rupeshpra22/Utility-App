@@ -387,9 +387,10 @@ const section = document.querySelector(".section");
 const buildUtilityScreen = (operations) => {
     document.querySelector(".section").innerHTML = ``;
     for (let operation of operations) {
-        const container = document.createElement("div");
+        const container = document.createElement("a");
         container.classList.add("container");
         container.id = `${operation.id}`
+        container.href = "#main"
         container.innerText = `${operation.name}`
         container.onclick = () => constructSelectedApp(container.id, operations)
         section.appendChild(container)
@@ -398,6 +399,7 @@ const buildUtilityScreen = (operations) => {
 
 
 const main = document.querySelector(".main");
+main.id = "main";
 const defaultMessage = document.createElement("div");
 defaultMessage.innerText = "Please Select One App From Above";
 defaultMessage.classList.add("default-message");
@@ -447,7 +449,6 @@ const constructSelectedApp = (appId, operations) => {
     parentEle.appendChild(outputParent)
     main.appendChild(parentEle);
     window.location.hash = appId;
-    window.scroll(0, document.documentElement.scrollHeight);
 }
 
 const operationFunc = (value, id) => {
