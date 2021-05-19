@@ -60,7 +60,7 @@ nav a:hover{
     box-shadow:rgb(0 0 0 / 35%) 0px 5px 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: fit-content;
     margin: 0px 50px;
@@ -68,7 +68,7 @@ nav a:hover{
 
 .container{
     height: 120px;
-    width: 120px;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,9 +76,8 @@ nav a:hover{
     box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
     border-radius: 10px;
     cursor: pointer;
-    margin: 10px;
+    margin: 15px;
     background-color: #98D7C2;
-    flex-grow: 1;
     padding: 10px;
     font-size: 20px;
 }
@@ -184,4 +183,18 @@ nav a:hover{
       .go-to-up{
           display: block;
       }
+  }
+
+  @media screen and (max-width: 850px){
+    .container{
+        width: 30%;
+        margin: 10px;
+    }
+  }
+
+  @media screen and (max-width: 750px){
+    .container{
+        width: 50%;
+        margin: 10px;
+    }
   }
