@@ -166,7 +166,7 @@ nav a:hover{
     bottom: 8px;
     right: 8px;
     box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-
+    display: none;
   }
   
   .arrow {
@@ -178,4 +178,10 @@ nav a:hover{
     position: absolute;
     top: 22px;
     left: 20px;
+  }
+
+  @media screen and (max-width: 650px){
+      .go-to-up{
+          display: block;
+      }
   }
