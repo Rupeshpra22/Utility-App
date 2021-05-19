@@ -187,14 +187,14 @@ nav a:hover{
 
   @media screen and (max-width: 850px){
     .container{
-        width: 30%;
+        width: 130px;
         margin: 10px;
     }
   }
 
   @media screen and (max-width: 750px){
     .container{
-        width: 50%;
+        width: 150px;
         margin: 10px;
     }
   }
